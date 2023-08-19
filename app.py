@@ -6,11 +6,11 @@ examples = [
             ["The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was introduced by Google and the University of Toronto in 2017, and has been widely used in Natural Language Processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification. The core contribution of the Transformer is the use a self-attention mechanism, which allows the model to learn the relevance and context of all words (tokens) in an input, not just the neighboring words. It achieves this through attention weights (learned during the training phase) that determine the importance of each word to one another (irrespectively of their position)."]]
 
 
-pegasus = gr.Interface.load("huggingface/google/pegasus-xsum", 
+pegasus = gr.load("huggingface/google/pegasus-xsum", 
                             inputs=gr.Textbox(lines=20, placeholder="Content Here..."),
                             outputs=gr.Textbox(lines=20, placeholder="..."),
                             title=title,
                             examples=examples).queue(concurrency_count=2)
 
-pegasus.launch(share=True)
+pegasus.launch()
 
